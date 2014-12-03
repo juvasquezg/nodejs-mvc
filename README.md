@@ -43,3 +43,25 @@ node server.js
 ### Six
 - visit http://localhost:3000/article/save/
 - visit http://localhost:3000/article/list/
+
+##Segundo Paso tag 02
+
+### Seven
+- Se separa el server de la libreria express
+- Se crea la carpeta app
+- Dentro de la carpeta app se crea el archivo expressServer.js
+
+### Eigth
+- Se pasa la libreria express de server.js a expressServer.js
+- Se crea la clase expressServer en el archivo expressServer.js
+- Se exporta la clase expressServer.
+- Se pasa la sección **Create express app** de server.js
+	para la clase expressServer de **expressServer.js**
+
+### Ninth
+- Se agrega config como parametro de la clase expressServer
+- Para que expressServer sea un parámetro de la clase se agrega this
+	a esta variable.
+- Se llama el modulo de expressServer y se instancia el nuevo objeto app.
+
+This site was built entirely for education purposes only.
