@@ -1,0 +1,27 @@
+{
+  "name": "nodejs-mvc",
+  "version": "0.0.1",
+  "description": "node-mvc template for future projects",
+  "main": "server.js",
+  "scripts": {
+    "test": "make test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/juvasquezg/nodejs-mvc.git"
+  },
+  "keywords": [
+    "node",
+    "mvc",
+    "meanjs"
+  ],
+  "author": "juvasquezg",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/juvasquezg/nodejs-mvc/issues"
+  },
+  "homepage": "https://github.com/juvasquezg/nodejs-mvc",
+  "dependencies": {
+    "express": "^4.10.4"
+  }
+}
