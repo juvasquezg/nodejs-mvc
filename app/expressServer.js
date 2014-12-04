@@ -36,11 +36,11 @@ var expressServer = function (config) {
 
   // Routes
   this.expressServer.get('/article/save/', function (req, res, next ) {
-    res.render('index', {nombre: 'Julian V.'});
+    res.render('index', {nombre: 'Julian Vásquez'});
   });
 
   this.expressServer.get('/article/list/', function (req, res, next ) {
-    res.send("I am in list url");
+    res.render('articles/details', {});
   });
 
 };

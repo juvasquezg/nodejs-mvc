@@ -74,12 +74,18 @@ node server.js
 	Frontend llamada public.
 - Se crea el midleware favicon para que encuentre el favicon del proyecto
 
-##Cuarto Paso tag 03
+##Cuarto Paso tag 04
 - Se configura el template engine con express debajo de los middlewares
 - Se va a usar swig
 - Se crea la carpeta server y dentro las carpetas controllers, models, views
 - Dentro de views la carpeta templates.
 - Se crea el template en html para las paginas del proyecto.
 
+##Quinto Paso tag 05
+- Se crea un middlerware propio, creacion de middleware.
+- Se va a crear el middleware locals.
+- Esto son variables globales muy usadas en la aplicacion
+	como los parametros de un usuario, el username, el nick...
+- Se modifica el template para observar el locals
 
 This site was built entirely for education purposes only.
