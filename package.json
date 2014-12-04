@@ -23,6 +23,7 @@
   "homepage": "https://github.com/juvasquezg/nodejs-mvc",
   "dependencies": {
     "express": "^4.10.4",
-    "serve-favicon": "^2.1.7"
+    "serve-favicon": "^2.1.7",
+    "swig": "^1.4.2"
   }
 }

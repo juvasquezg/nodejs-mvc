@@ -1,0 +1,14 @@
+{% extends './templates/admin.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+	<h2>Bienvenido <span class="name"> [[ nombre ]] </span> </h2>
+	<a href="/auth/twitter">Log in con twitter</a>
+
+	<!-- external styles -->
+	<link rel="stylesheet" href="/views/less/index.min.css" />
+
+	<!-- external scripts -->
+	<script type='text/javascript' src=""></script>
+{% endblock %}

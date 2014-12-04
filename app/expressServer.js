@@ -7,7 +7,8 @@
  */
 
 // related third party node_modules
-var express = require('express');
+var express = require('express'),
+    swig = require('swig');
 
 // standard core node_modules requires
 
@@ -28,9 +29,14 @@ var expressServer = function (config) {
     this.expressServer.use(middlewares[middleware]);
   }
 
+  this.expressServer.engine('html', swig.renderFile);
+  this.expressServer.set('view engine', 'html');
+  this.expressServer.set('views', __dirname + '/server/views/');
+  swig.setDefaults({varControls: ['[[', ']]']}); // Para usar {} en Angular
+
   // Routes
   this.expressServer.get('/article/save/', function (req, res, next ) {
-    res.send("I am in save url");
+    res.render('index', {nombre: 'Julian V.'});
   });
 
   this.expressServer.get('/article/list/', function (req, res, next ) {
