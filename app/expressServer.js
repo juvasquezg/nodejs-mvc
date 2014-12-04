@@ -12,6 +12,7 @@ var express = require('express');
 // standard core node_modules requires
 
 // node-modules specific requires
+var middlewares = require('./middlewares/admin');
 
 var expressServer = function (config) {
 
@@ -21,6 +22,11 @@ var expressServer = function (config) {
    * Create express app
    */
   this.expressServer = new express();
+
+  // Middlewares - between express and routes
+  for (var middleware in middlewares) {
+    this.expressServer.use(middlewares[middleware]);
+  }
 
   // Routes
   this.expressServer.get('/article/save/', function (req, res, next ) {

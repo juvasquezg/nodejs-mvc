@@ -64,4 +64,16 @@ node server.js
 	a esta variable.
 - Se llama el modulo de expressServer y se instancia el nuevo objeto app.
 
+##Tercer Paso tag 03
+
+### Ten
+- se crea la carperta en app/middlewares donde se almacenan.
+	todos los middlewares que va usar express.
+- Se crea el archivo admin.js donde se van a requerir los middlewares.
+- Se crea el middleware de static, que dice la carpeta del lado del cliente
+	Frontend llamada public.
+- Se crea el midleware favicon para que encuentre el favicon del proyecto
+
+
+
 This site was built entirely for education purposes only.
