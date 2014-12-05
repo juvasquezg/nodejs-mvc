@@ -12,11 +12,14 @@ var express = require('express'),
 
 // standard core node_modules requires
 
-// node-modules specific requires
-var middlewares = require('./middlewares/admin');
+// node-modules local specific requires
+var env = process.env.NODE_ENV || 'production',
+    middlewares = require('./middlewares/admin');
+
 
 var expressServer = function (config) {
 
+  //keep reference to config
   this.config = config || {};
 
   /**
@@ -29,10 +32,21 @@ var expressServer = function (config) {
     this.expressServer.use(middlewares[middleware]);
   }
 
+  /**
+  * Settings
+  */
+  // template engine
   this.expressServer.engine('html', swig.renderFile);
   this.expressServer.set('view engine', 'html');
   this.expressServer.set('views', __dirname + '/server/views/');
   swig.setDefaults({varControls: ['[[', ']]']}); // Para usar {} en Angular
+
+  // development enviroment
+  if (env === 'development') {
+    console.log('OK NO HAY CACHE');
+    this.expressServer.set('view cache', false);
+    swig.setDefaults({cache: false, varControls:['[[',']]']});
+  }
 
   // Routes
   this.expressServer.get('/article/save/', function (req, res, next ) {

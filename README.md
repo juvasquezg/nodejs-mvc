@@ -88,4 +88,8 @@ node server.js
 	como los parametros de un usuario, el username, el nick...
 - Se modifica el template para observar el locals
 
+##Sexto Paso tag 06
+- Se configura la variable de entorno
+- Se corre en un ambiente de desarrollo
+
 This site was built entirely for education purposes only.
