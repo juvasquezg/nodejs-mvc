@@ -14,10 +14,11 @@ var express = require('express'),
 
 // node-modules local specific requires
 var env = process.env.NODE_ENV || 'production',
-    middlewares = require('./middlewares/admin');
+    middlewares = require('./middlewares/admin'),
+    router = require('./server/router');
 
 
-var expressServer = function (config) {
+var ExpressServer = function (config) {
 
   //keep reference to config
   this.config = config || {};
@@ -48,15 +49,31 @@ var expressServer = function (config) {
     swig.setDefaults({cache: false, varControls:['[[',']]']});
   }
 
-  // Routes
-  this.expressServer.get('/article/save/', function (req, res, next ) {
-    res.render('index', {nombre: 'Julian Vásquez'});
-  });
-
-  this.expressServer.get('/article/list/', function (req, res, next ) {
-    res.render('articles/details', {});
-  });
-
+  // Dinamic Routes
+  for (var controller in router){
+    for (var classMethod in router[controller].prototype){
+      var httpMethod = classMethod.split('_')[0];
+      var httpVerb = classMethod.split('_')[1];
+      var id = classMethod.split('_')[2];
+      id = (httpMethod == 'get' && id !== undefined) ? ':id' : '';
+      var url = '/' + controller + '/' + httpVerb + '/' + id;
+      this.router(controller,classMethod,httpMethod,url);
+    }
+  }
 };
 
-module.exports = expressServer;
+ExpressServer.prototype.router = function(controller,classMethod,httpMethod,url) {
+  console.log(url);
+  this.expressServer[httpMethod](url, function(req,res,next){
+    var conf = {
+      'classMethod':classMethod,
+      'req': req,
+      'res': res,
+      'next': next
+    };
+    var Controller = new router[controller](conf);
+    Controller.response();
+  });
+};
+
+module.exports = ExpressServer;

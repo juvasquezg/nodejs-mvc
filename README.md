@@ -92,4 +92,8 @@ node server.js
 - Se configura la variable de entorno
 - Se corre en un ambiente de desarrollo
 
+##Septimo Paso tag 07
+- Se crea un controlador dinamico en expressServer
+- Se crea el archivo router que es una lista de objetos controllers
+
 This site was built entirely for education purposes only.
