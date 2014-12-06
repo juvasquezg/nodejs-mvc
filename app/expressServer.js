@@ -65,13 +65,13 @@ var ExpressServer = function (config) {
 ExpressServer.prototype.router = function(controller,classMethod,httpMethod,url) {
   console.log(url);
   this.expressServer[httpMethod](url, function(req,res,next){
-    var conf = {
+    var config = {
       'classMethod':classMethod,
       'req': req,
       'res': res,
       'next': next
     };
-    var Controller = new router[controller](conf);
+    var Controller = new router[controller](config);
     Controller.response();
   });
 };

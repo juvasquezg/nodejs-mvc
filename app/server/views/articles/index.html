@@ -1,0 +1,70 @@
+{% extends '../templates/admin.html' %}
+
+{% block title %}FirstSeedAngular{% endblock %}
+
+{% block head %}
+	<!-- external styles -->
+	<link rel="stylesheet" href="/less/bootstrap.min.css" />
+	<link rel="stylesheet" href="/less/bootstrap-theme.min.css" />
+	<link rel="stylesheet" href="/views/articles/less/index.min.css" />
+{% endblock %}
+
+{% block content %}
+  <!-- pokemon -->
+  <div ng-controller="PokemonController as pkmCtrl">
+    <div class="page-header">
+      <h1>
+        {{pkmCtrl.pokemon.name}}
+        <small>{{pkmCtrl.pokemon.species}}</small>
+        <span class="label label-primary pull-right">#{{pkmCtrl.pokemon.id}}</span>
+      </h1>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <img class="avatar center-block" ng-src="/views/articles/img/pokemons/{{pkmCtrl.pokemon.name | lowercase}}.jpg">
+      </div>
+      <div class="col-md-6">
+        <ul class="nav nav-tabs nav-justified">
+          <li class="active"><a href="#">Pokédex</a></li>
+          <li><a href="#">Stats</a></li>
+          <li><a href="#">Evolution</a></li>
+        </ul>
+        <div class="tab-content">
+          <div>
+            <ul class="list-group">
+              <li class="list-group-item">
+                <strong>Type</strong>
+                <span class="pull-right">
+               	<span class="label type type-{{type | lowercase}}" ng-repeat="type in pkmCtrl.pokemon.type">
+                 	{{type}}
+                 </span>
+               </span>
+              </li>
+              <li class="list-group-item">
+                <strong>Height</strong>
+                <span class="pull-right">{{pkmCtrl.pokemon.height}}</span>
+              </li>
+              <li class="list-group-item">
+                <strong>Weight</strong>
+                <span class="pull-right">{{pkmCtrl.pokemon.weight}}</span>
+              </li>
+              <li class="list-group-item">
+                <strong>Abilities</strong>
+                <ul>
+	                <li ng-repeat="ability in pkmCtrl.pokemon.abilities">
+	                  {{ability}}
+	                </li>
+              	</ul>
+
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- /pokemon -->
+
+	<!-- external scripts -->
+	<script type='text/javascript' src="/views/articles/js/index.min.js"></script>
+{% endblock %}
