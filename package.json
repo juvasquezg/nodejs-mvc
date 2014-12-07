@@ -23,7 +23,20 @@
   "homepage": "https://github.com/juvasquezg/nodejs-mvc",
   "dependencies": {
     "express": "^4.10.4",
+    "grunt-contrib-rename": "0.0.3",
     "serve-favicon": "^2.1.7",
     "swig": "^1.4.2"
+  },
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-uglify": "^0.6.0",
+    "grunt-contrib-jshint": "^0.10.0",
+    "grunt-contrib-clean": "^0.6.0",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-contrib-less": "^0.12.0",
+    "grunt-concurrent": "^1.0.0",
+    "grunt-nodemon": "^0.3.0",
+    "grunt-newer": "^0.8.0",
+    "grunt-contrib-copy": "^0.7.0"
   }
 }

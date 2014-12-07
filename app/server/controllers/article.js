@@ -4,8 +4,8 @@
 var Article = function(config) {
   this.config = config || {};
 
-  this.response = function () {
-    this[this.config.classMethod](this.config.req,this.config.res,this.config.next);
+  this.response = function() {
+    this[this.config.classMethod](this.config.req, this.config.res, this.config.next);
   };
 };
 

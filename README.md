@@ -96,9 +96,14 @@ node server.js
 - Se crea un controlador dinamico en expressServer
 - Se crea el archivo router que es una lista de objetos controllers
 
-## Se agrega Angularjs al proyecto
+## Octavo Paso Se agrega Angularjs al proyecto
 - Se modifica el template admin para el proyecto.
 - Se integra el repo de Angular con el de nodejs-mvc
 - Se siguen los pasos del repo AngularJs
+
+## Noveno Paso Se agrega Gruntfile.js y bower al proyecto.
+- Se crea el archivo Gruntfile.js al proyecto.
+- Se crea bower para dependencias.
+- Se agrega todo el ambiente de desarrollo automatizado.
 
 This site was built entirely for education purposes only.

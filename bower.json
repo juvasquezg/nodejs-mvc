@@ -1,0 +1,30 @@
+{
+  "name": "nodejs-mvc",
+  "version": "0.0.1",
+  "homepage": "https://github.com/juvasquezg/nodejs-mvc",
+  "authors": [
+    "juvasquezg"
+  ],
+  "description": "nodejs web app mvc",
+  "moduleType": [
+    "node"
+  ],
+  "keywords": [
+    "nodejs",
+    "mvc",
+    "angular",
+    "mongo"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.3.5",
+    "bootstrap": "~3.1.1"
+  }
+}

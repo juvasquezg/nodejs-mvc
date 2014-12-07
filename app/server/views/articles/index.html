@@ -1,12 +1,15 @@
-{% extends '../templates/admin.html' %}
+{% extends '../templates/layout.html' %}
 
 {% block title %}FirstSeedAngular{% endblock %}
 
 {% block head %}
 	<!-- external styles -->
-	<link rel="stylesheet" href="/less/bootstrap.min.css" />
-	<link rel="stylesheet" href="/less/bootstrap-theme.min.css" />
 	<link rel="stylesheet" href="/views/articles/less/index.min.css" />
+{% endblock %}
+
+{% block feet %}
+	<!-- external scripts -->
+	<script type='text/javascript' src="/views/articles/js/index.min.js"></script>
 {% endblock %}
 
 {% block content %}
@@ -64,7 +67,4 @@
     </div>
   </div>
   <!-- /pokemon -->
-
-	<!-- external scripts -->
-	<script type='text/javascript' src="/views/articles/js/index.min.js"></script>
 {% endblock %}
