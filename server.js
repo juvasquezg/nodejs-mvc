@@ -7,15 +7,19 @@
  */
 
 // related third party node_modules
+var mongoose = require('mongoose');
 
 // standard core node_modules requires
 var http = require('http');
 
 // local node-modules specific requires
-var config = require('./config');
-var expressServer = require('./app/expressServer');
+var config = require('./config'),
+    expressServer = require('./app/expressServer');
 
 var app = new expressServer(config);
+
+//setup mongoose
+mongoose.connect('mongodb://' + config.mongodb.uri);
 
 /**
  * Setup the web server

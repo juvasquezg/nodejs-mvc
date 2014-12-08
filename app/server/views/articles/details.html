@@ -1,1 +1,10 @@
-[[user.username]]
+{% extends "../templates/layout.html" %}
+
+
+
+{% block content %}
+<p> [[user.username]] </p>
+<p>[[article.title]]</p>
+<p>[[article.slug]]</p>
+<p>[[article.content]]</p>
+{%endblock%}

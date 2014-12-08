@@ -25,6 +25,7 @@
     "body-parser": "^1.10.0",
     "express": "^4.10.4",
     "grunt-contrib-rename": "0.0.3",
+    "mongoose": "^3.8.20",
     "serve-favicon": "^2.1.7",
     "swig": "^1.4.2"
   },

@@ -114,5 +114,10 @@ node server.js
 ## Once Crear la vista del controlador
 - Se crea la vista del controlador
 
+## Doce Crear el modelo del controlador y guardar datos MongoDb
+- Se crea el modelo del controlador
+- Se guardan los datos en MongoDb
+
+
 
 This site was built entirely for education purposes only.
