@@ -9,9 +9,13 @@ var Article = function(config) {
   };
 };
 
+Article.prototype.post_save = function(req, res, next) {
+  debugger;
+};
+
 
 Article.prototype.get_create = function(req, res, next) {
-  res.send('La vista create');
+  res.render('articles/create');
 };
 
 Article.prototype.get_read = function(req, res, next) {

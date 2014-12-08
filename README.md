@@ -106,4 +106,9 @@ node server.js
 - Se crea bower para dependencias.
 - Se agrega todo el ambiente de desarrollo automatizado.
 
+## Decimo, se crea un form y se usa POST
+- Se crea un form en el html create
+- Se capturan los datos con el body parser
+- Se deja en debugger
+
 This site was built entirely for education purposes only.

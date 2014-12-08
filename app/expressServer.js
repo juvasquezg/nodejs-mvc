@@ -8,7 +8,8 @@
 
 // related third party node_modules
 var express = require('express'),
-    swig = require('swig');
+    swig = require('swig'),
+    bodyParser = require('body-parser');
 
 // standard core node_modules requires
 
@@ -29,6 +30,7 @@ var ExpressServer = function (config) {
   this.expressServer = new express();
 
   // Middlewares - between express and routes
+  this.expressServer.use(bodyParser.urlencoded({extended: true}))
   for (var middleware in middlewares) {
     this.expressServer.use(middlewares[middleware]);
   }

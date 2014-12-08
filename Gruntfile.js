@@ -23,6 +23,10 @@ module.exports = function(grunt) {
             cwd: 'bower_components/angular/',
             src: ['**'],
             dest: 'app/public/vendor/angular/',
+          },
+          {
+            expand: true, cwd: 'bower_components/jquery/dist/',
+            src: ['jquery.js'], dest: 'app/public/vendor/jquery/'
           }
         ]
       }
@@ -81,6 +85,7 @@ module.exports = function(grunt) {
       layouts: {
         files: {
           'app/public/views/templates/core.min.js': [
+            'app/public/vendor/jquery/jquery.js',
             'app/public/vendor/angular/angular.js',
             'app/public/vendor/bootstrap/js/affix.js',
             'app/public/vendor/bootstrap/js/alert.js',
