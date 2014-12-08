@@ -111,4 +111,8 @@ node server.js
 - Se capturan los datos con el body parser
 - Se deja en debugger
 
+## Once Crear la vista del controlador
+- Se crea la vista del controlador
+
+
 This site was built entirely for education purposes only.
