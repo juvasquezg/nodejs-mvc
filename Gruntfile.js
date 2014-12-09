@@ -84,7 +84,7 @@ module.exports = function(grunt) {
       },
       layouts: {
         files: {
-          'app/public/views/templates/core.min.js': [
+          'app/public/js/core.min.js': [
             'app/public/vendor/jquery/jquery.js',
             'app/public/vendor/angular/angular.js',
             'app/public/vendor/bootstrap/js/affix.js',
@@ -142,7 +142,7 @@ module.exports = function(grunt) {
       },
       layouts: {
         files: {
-          'app/public/views/templates/core.min.css': [
+          'app/public/less/core.min.css': [
             'app/public/less/bootstrap-build.less',
             'app/public/less/core.less'
           ]

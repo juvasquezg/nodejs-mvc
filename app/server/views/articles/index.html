@@ -14,57 +14,104 @@
 
 {% block content %}
   <!-- pokemon -->
-  <div ng-controller="PokemonController as pkmCtrl">
-    <div class="page-header">
-      <h1>
-        {{pkmCtrl.pokemon.name}}
-        <small>{{pkmCtrl.pokemon.species}}</small>
-        <span class="label label-primary pull-right">#{{pkmCtrl.pokemon.id}}</span>
-      </h1>
-    </div>
-    <div class="row">
-      <div class="col-md-6">
-        <img class="avatar center-block" ng-src="/views/articles/img/pokemons/{{pkmCtrl.pokemon.name | lowercase}}.jpg">
-      </div>
-      <div class="col-md-6">
-        <ul class="nav nav-tabs nav-justified">
-          <li class="active"><a href="#">Pokédex</a></li>
-          <li><a href="#">Stats</a></li>
-          <li><a href="#">Evolution</a></li>
-        </ul>
-        <div class="tab-content">
-          <div>
-            <ul class="list-group">
-              <li class="list-group-item">
-                <strong>Type</strong>
-                <span class="pull-right">
-               	<span class="label type type-{{type | lowercase}}" ng-repeat="type in pkmCtrl.pokemon.type">
-                 	{{type}}
-                 </span>
-               </span>
-              </li>
-              <li class="list-group-item">
-                <strong>Height</strong>
-                <span class="pull-right">{{pkmCtrl.pokemon.height}}</span>
-              </li>
-              <li class="list-group-item">
-                <strong>Weight</strong>
-                <span class="pull-right">{{pkmCtrl.pokemon.weight}}</span>
-              </li>
-              <li class="list-group-item">
-                <strong>Abilities</strong>
-                <ul>
-	                <li ng-repeat="ability in pkmCtrl.pokemon.abilities">
-	                  {{ability}}
-	                </li>
-              	</ul>
-
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- /pokemon -->
+	<section ng-app="pokedex">
+	  <div ng-controller="PokemonController as pkmCtrl">
+	    <div class="page-header">
+	      <h1>
+	        {{pkmCtrl.pokemon.name}}
+	        <small>{{pkmCtrl.pokemon.species}}</small>
+	        <span class="label label-primary pull-right">#{{pkmCtrl.pokemon.id}}</span>
+	      </h1>
+	    </div>
+	    <div class="row">
+	      <div class="col-md-6">
+	        <img class="avatar center-block" ng-src="/views/articles/img/pokemons/{{pkmCtrl.pokemon.name | lowercase}}.jpg">
+	      </div>
+	      <div class="col-md-6" ng-controller= "TabsController as tabs">
+	        <ul class="nav nav-tabs nav-justified">
+	          <li ng-class="{ active:tabs.tab === 1 }"><a href="#" ng-click="tabs.selectTab(1)">Pokédex</a></li>
+            <li ng-class="{ active:tabs.tab === 2 }"><a href="#" ng-click="tabs.selectTab(2)">Stats</a></li>
+            <li ng-class="{ active:tabs.tab === 3 }"><a href="#" ng-click="tabs.selectTab(3)">Evolution</a></li>
+	        </ul>
+	        <div class="tab-content">
+	          <!-- Pokedex -->
+						<div ng-show="tabs.tab === 1">
+	            <ul class="list-group">
+	              <li class="list-group-item">
+	                <strong>Type</strong>
+	                <span class="pull-right">
+	               	<span class="label type type-{{type | lowercase}}" ng-repeat="type in pkmCtrl.pokemon.type">
+	                 	{{type}}
+	                 </span>
+	               </span>
+	              </li>
+	              <li class="list-group-item">
+	                <strong>Height</strong>
+	                <span class="pull-right">{{pkmCtrl.pokemon.height}}</span>
+	              </li>
+	              <li class="list-group-item">
+	                <strong>Weight</strong>
+	                <span class="pull-right">{{pkmCtrl.pokemon.weight}}</span>
+	              </li>
+	              <li class="list-group-item">
+	                <strong>Abilities</strong>
+	                <ul>
+		                <li ng-repeat="ability in pkmCtrl.pokemon.abilities">
+		                  {{ability}}
+		                </li>
+	              	</ul>
+	              </li>
+	            </ul>
+	          </div>
+						<!-- Stats -->
+            <div ng-show="tabs.tab === 2">
+              <ul class="list-group">
+                <li class="list-group-item">
+                  <strong>HP</strong>
+                  <span class="badge">{{pkmCtrl.pokemon.stats.hp}}</span>
+                </li>
+                <li class="list-group-item">
+                  <strong>Attack</strong>
+                  <span class="badge">{{pkmCtrl.pokemon.stats.attack}}</span>
+                </li>
+                <li class="list-group-item">
+                  <strong>Defense</strong>
+                  <span class="badge">{{pkmCtrl.pokemon.stats.defense}}</span>
+                </li>
+                <li class="list-group-item">
+                  <strong>Special Attack</strong>
+                  <span class="badge">{{pkmCtrl.pokemon.stats['sp.atk']}}</span>
+                </li>
+                <li class="list-group-item">
+                  <strong>Special Defense</strong>
+                  <span class="badge">{{pkmCtrl.pokemon.stats['sp.def']}}</span>
+                </li>
+                <li class="list-group-item">
+                  <strong>Speed</strong>
+                  <span class="badge">{{pkmCtrl.pokemon.stats.speed}}</span>
+                </li>
+                <li class="list-group-item">
+                  <strong>Total</strong>
+                  <span class="badge">{{pkmCtrl.pokemon.stats.total}}</span>
+                </li>
+              </ul>
+            </div>
+            <!-- Evolution -->
+            <div ng-show="tabs.tab === 3">
+              <div class="text-center" ng-repeat="pokemon in pkmCtrl.pokemon.evolution">
+                <a href="#">
+                  <img src="/views/articles/img/pokemons/{{pokemon | lowercase}}.jpg" width="160">
+                  <p>
+                    <strong>{{pokemon}}</strong>
+                  </p>
+                </a>
+                <span ng-hide="$last" class="glyphicon glyphicon-arrow-down"></span>
+              </div>
+	        	</div>
+	      	</div>
+	    	</div>
+	  	</div>
+		</div>
+  </section>
+	<!-- /pokemon -->
 {% endblock %}
